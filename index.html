@@ -32,10 +32,12 @@
 
     var iframe = document.querySelector('iframe');
     var i = 0;
-    setInterval(function () {
+    setInterval(screen, 20000);
+    function screen() {
         iframe.src = urls[i];
         i = (i + 1) % urls.length;
-    }, 20000);
+    }
+    screen();
 </script>
 
 </html>
