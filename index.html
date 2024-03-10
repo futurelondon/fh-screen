@@ -23,7 +23,6 @@
 </style>
 
 <body>
-    <iframe></iframe>
 </body>
 
 <script>
@@ -32,12 +31,24 @@
         'https://futurehouse.uk'
     ];
 
-    var iframe = document.querySelector('iframe');
+    var iframes = urls.map(function (url) {
+        const iframe$ = document.createElement('iframe');
+        iframe$.src = url;
+        iframe$.style.display = 'none';
+        document.body.appendChild(iframe$);
+        return iframe$;
+    });
+
     var i = 0;
     setInterval(screen, 20000);
     function screen() {
-        iframe.src = urls[i];
         i = (i + 1) % urls.length;
+        iframes[i].style.display = 'block';
+        iframes.forEach(function (iframe$, index) {
+            if (index !== i) {
+                iframe$.style.display = 'none';
+            }
+        });
     }
     screen();
 
