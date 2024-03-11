@@ -27,8 +27,8 @@
 
 <script>
     var urls = [
+        'https://futurehouse.uk',
         './bar-advert.html',
-        'https://futurehouse.uk'
     ];
 
     var iframes = urls.map(function (url) {
@@ -55,6 +55,8 @@
     setTimeout(() => {
         window.reload();
     }, 1000 * 60 * 60);
+
+    document.body.focus();
 </script>
 
 </html>
