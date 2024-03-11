@@ -8,7 +8,14 @@
 </head>
 
 <style>
-    body {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    html,
+    body,
+    iframe {
+        background: black;
         position: absolute;
         left: 0;
         top: 0;
@@ -16,6 +23,8 @@
         height: 100%;
         padding: 0;
         margin: 0;
+        border: none;
+        overflow: hidden;
     }
 
     img {
